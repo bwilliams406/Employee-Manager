@@ -1,4 +1,34 @@
-.sidenav {
-    background-color: grey;
+header {
+    width: 100%;
+    height: 150px;
+    background-color: rgb( 39, 44, 49);
 }
 
+.hide{
+    display: none !important;
+}
+
+
+.sidenav {
+    position: relative;
+    right: 1.5%;
+    background-color: rgb( 39, 44, 49);
+    width: 25%;
+    height: 1500px;
+}
+
+.sidebuttons {
+    position: relative;
+    top: 200px;
+    left: 30%;
+    width: 35%;
+}
+
+.background {
+    background-color: whitesmoke;
+}
+
+.list {
+    position: relative;
+    bottom: 1450px;
+}

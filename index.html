@@ -6,30 +6,89 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
   <title>Document</title>
 </head>
+
 <body>
+  <header>
 
-<div class="container-fluid background"></div>
+  </header>
+  <div class="container-fluid background">
 
-<div class="sidenav"></div>
-<div class="sidebuttons">
-  <nav class="nav flex-column">
-    <button type="button" id="view" class="btn btn-outline-light">View</button>
-    <button type="button" id="add" class="btn btn-outline-light">Add</button>
-    <button type="button" id="verify" class="btn btn-outline-light">Verify</button>
-    <button type="button" id="update" class="btn btn-outline-light">Update</button>
-    <button type="button" id="delete" class="btn btn-outline-light">Delete</button>
-    <div class="content">
-   </div>
-  </nav>
-</div>  
-</div>
 
+    <div class="inputbr">
+      <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand">Employee Directory</a>
+        <form class="form-inline addForm hide">
+          <input id="" class="form-control mr-sm-2 " type="search" placeholder="Name" aria-label="Search">
+          <input id="phoneNum" class="form-control mr-sm-2" type="search" placeholder="Phone Number" aria-label="Search">
+          <input id="officeNum" class="form-control mr-sm-2" type="search" placeholder="Office Number" aria-label="Search">
+          <button id="addEmployee" class="btn btn-outline-dark my-2 my-sm-0" type="submit">Add Employee</button>
+        </form>
+        <form class="form-inline verifyForm hide">
+          <input id="name" class="form-control mr-sm-2 " type="search" placeholder="Name" aria-label="Search">
+          <button id="verifyEmployee" class="btn btn-outline-dark my-2 my-sm-0" type="submit">Verify Employee</button>
+        </form>
+        <form class="form-inline updateForm hide">
+            <input id="newName" class="form-control mr-sm-2" type="search" placeholder="Name" aria-label="Search">
+            <input id="newPhoneNum" class="form-control mr-sm-2" type="search" placeholder="Phone Number" aria-label="Search">
+            <input id="newOfficeNum" class="form-control mr-sm-2" type="search" placeholder="Office Number" aria-label="Search">
+          <button id="updateEmployee" class="btn btn-outline-dark my-2 my-sm-0" type="submit">Update Employee</button>
+        </form>
+        <form class="form-inline deleteForm hide">
+          <input id="nameToDelete" class="form-control mr-sm-2" type="search" placeholder="Name" aria-label="Search">
+          <button id="deleteEmployee" class="btn btn-outline-dark my-2 my-sm-0" type="submit">Delete Employee</button>
+        </form>
+      </nav>
+    </div>
+
+
+
+
+    <div class="sidenav">
+      <div class="sidebuttons">
+        <nav class="nav flex-column">
+          <button type="button" id="view" class="btn btn-outline-light">View</button>
+          <button type="button" id="add" class="btn btn-outline-light">Add</button>
+          <button type="button" id="verify" class="btn btn-outline-light">Verify</button>
+          <button type="button" id="update" class="btn btn-outline-light">Update</button>
+          <button type="button" id="delete" class="btn btn-outline-light">Delete</button>
+        </nav>
+      </div>
+    </div>
+
+
+
+
+    <div class="container list">
+      <div class="row">
+        <div class="col-md">
+
+        </div>
+        <div class="col-md">
+          <div class="card border-dark mb-3" style="max-width: 18rem;">
+            <div class="card-header">Directory</div>
+            <div class="content mt-3">
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+  </div>
 
   <script src="dom.js"></script>
   <script src="employeeList.js"></script>
