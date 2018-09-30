@@ -1,7 +1,3 @@
-
-
-
-
 // displays contact information
 
 const view = function (content) {
@@ -14,14 +10,15 @@ const view = function (content) {
 $("#view").on("click", view);
 
 
-// adds contact information
+// Switches forms when add button is clicked
 
 $("#add").on("click", function (event) {
   $('.content').empty();
-  $('.verifyForm').addClass("hide");
-  $('.addForm').removeClass("hide");
+  hideForms();
+  $(".addForm").toggleClass("hide");
 })
 
+// adds new imployee information
 $("#addEmployee").on("click", function (event) {
   event.preventDefault();
   const name = $("#name").val();
@@ -38,88 +35,106 @@ $("#addEmployee").on("click", function (event) {
     employeeList.push({
       name: name,
       officeNum: officeNum,
-      phoneNum: phoneNum})
-      render();
-    }
+      phoneNum: phoneNum
+    })
+    render();
   }
+}
 )
 
 
 $("#add").on("click", view);
 
-//verifys if the employee is in the contact book
 
+// Switches forms when verify button is clicked
 $("#verify").on("click", function (event) {
   $('.content').empty();
-  $('.addForm').addClass("hide");
-  $('.verifyForm').removeClass("hide");
+  hideForms();
+  $(".verifyForm").toggleClass("hide");
 })
 
+
+//verifys if input is already an employee
 $("#verifyEmployee").on("click", function (event) {
   event.preventDefault();
-  const name = $("#name").val();
-  if (name === $("#name").val()){
-    alert("Currently an Employee")
-  } else {
-   alert("Not an Employee")
-      render();
+  const name = $("#verifyName").val();
+  for (let i = 0; i < employeeList.length; i++) {
+    if (name === employeeList[i].name) {
+      return alert("Employee")
     }
   }
-)
+  return alert("Not Employee");
+});
 
 $("#verify").on("click", view);
 
 
 
 
-// $("#update").on("click", function (event) {
-//   $('.content').empty();
-//   $('.verifyForm').addClass("hide");
-//   $('.addForm').removeClass("hide");
-// })
-
-// $("#updateEmployee").on("click", function (event) {
-//   event.preventDefault();
-//   const name = $("#name").val();
-//   const officeNum = $("#officeNum").val();
-//   const phoneNum = $("#phoneNum").val();
-//   let newEmployee = {
-//     name: name,
-//     officeNum: officeNum,
-//     phoneNum: phoneNum
-//   }
-
-//   const age = prompt('Enter Employee Name');
-
-// function updateEmployee(event) {
-//   if (name === "#name" ) {
-//   } else {
-//     alert('You did not input your age');
-//   }
-// }
-
-// checkEmployee();
 
 
-//   if (name === "" || officeNum === "" || phoneNum === "") {
-//     alert("Didnt Fill Out")
-//   } else {
-//     employeeList.push({
-//       name: name,
-//       officeNum: officeNum,
-//       phoneNum: phoneNum})
-//       render();
-//     }
-//   }
-// )
+// Switches forms when update button is clicked
+$("#update").on("click", function (event) {
+  $('.content').empty();
+  hideForms();
+  $(".updateForm").toggleClass("hide");
+})
+
+//updates current cantacts information
+$("#updateEmployee").on("click", function (event) {
+  event.preventDefault();
+  const name = $("#updateContact").val();
+  for (let i = 0; i < employeeList.length; i++) {
+    if (name === employeeList[i].name) {
+      return alert("Employee")
+    }
+  }
+  return alert("Not Employee");
+});
+
+$("#update").on("click", view);
 
 
 
-const render = function() {
+
+// Switches forms when delete button is clicked
+
+$("#delete").on("click", function (event) {
+  $('.content').empty();
+  hideForms();
+  $(".deleteForm").toggleClass("hide");
+})
+
+$("#deleteEmployee").on("click", function (event) {
+  event.preventDefault();
+  const name = $("#deleteName").val();
+  for (let i = 0; i < employeeList.length; i++) {
+  
+};
+
+$("#delete").on("click", view);
+
+
+
+
+
+//function to render to html
+const render = function () {
   $('.content').empty();
   let employees = "";
 
   for (let i = 0; i < employeeList.length; i++) {
     $('.content').append(`<div class='card'><p>${employeeList[i].name}</p><p>${employeeList[i].officeNum}</p><p>${employeeList[i].phoneNum}</p></div>`);
   };
+}
+
+//function that adds or hides forms based on what button is clicked
+function hideForms() {
+  $(".form-inline").each(function (i) {
+
+    let isHidden = $(this).hasClass("hide")
+    if (!isHidden) {
+      $(this).addClass("hide");
+    }
+  });
 }
