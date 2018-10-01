@@ -80,17 +80,7 @@ $("#update").on("click", function (event) {
   $(".updateForm").toggleClass("hide");
 })
 
-//updates current cantacts information
-$("#updateEmployee").on("click", function (event) {
-  event.preventDefault();
-  const name = $("#updateContact").val();
-  for (let i = 0; i < employeeList.length; i++) {
-    if (name === employeeList[i].name) {
-      return alert("Employee")
-    }
-  }
-  return alert("Not Employee");
-});
+
 
 $("#update").on("click", view);
 
@@ -105,12 +95,7 @@ $("#delete").on("click", function (event) {
   $(".deleteForm").toggleClass("hide");
 })
 
-$("#deleteEmployee").on("click", function (event) {
-  event.preventDefault();
-  const name = $("#deleteName").val();
-  for (let i = 0; i < employeeList.length; i++) {
-  
-};
+
 
 $("#delete").on("click", view);
 
